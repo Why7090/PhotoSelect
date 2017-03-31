@@ -1,4 +1,6 @@
-﻿namespace PhotoSelect
+﻿using System.Windows.Forms;
+
+namespace PhotoSelect
 {
     partial class ImageSelect
     {
@@ -45,6 +47,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.verticalProgressBar1 = new PhotoSelect.VerticalProgressBar();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -212,11 +216,30 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.DeleteImage);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // verticalProgressBar1
+            // 
+            this.verticalProgressBar1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.verticalProgressBar1.Location = new System.Drawing.Point(0, 25);
+            this.verticalProgressBar1.MarqueeAnimationSpeed = 10;
+            this.verticalProgressBar1.Maximum = 1;
+            this.verticalProgressBar1.Name = "verticalProgressBar1";
+            this.verticalProgressBar1.Size = new System.Drawing.Size(10, 536);
+            this.verticalProgressBar1.Step = 1;
+            this.verticalProgressBar1.TabIndex = 9;
+            // 
             // ImageSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.verticalProgressBar1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.imageBox1);
             this.Controls.Add(this.listView1);
@@ -252,5 +275,20 @@
         private System.Windows.Forms.ToolStripMenuItem viewShortcutsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveBookmarksToolStripMenuItem;
         private System.Windows.Forms.Button button4;
+        private VerticalProgressBar verticalProgressBar1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+    }
+
+    public class VerticalProgressBar : ProgressBar
+    {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.Style |= 0x04;
+                return cp;
+            }
+        }
     }
 }

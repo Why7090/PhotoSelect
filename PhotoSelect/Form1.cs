@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -37,14 +38,8 @@ namespace PhotoSelect
                 imageList1.Images.RemoveAt(0);
                 img.Dispose();
             }
-            foreach (var p in imagePath)
-            {
-                var image = Image.FromFile(p.FullName);
-                var name = p.Name;
-                images.Add(name, image);
-                imageList1.Images.Add(name, image);
-                var item = listView1.Items.Add(name, name);
-            }
+            verticalProgressBar1.Maximum = imagePath.Length;
+            backgroundWorker1.RunWorkerAsync();
         }
 
         private FileInfo[] SearchImage (string path)
@@ -183,6 +178,38 @@ namespace PhotoSelect
                     imagePath = lst.ToArray();
                 }
             }
+        }
+
+        private void backgroundWorker1_DoWork (object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            //int length = imagePath.Length;
+            int processed = 0;
+
+            foreach (var p in imagePath)
+            {
+                var image = Image.FromFile(p.FullName);
+                var name = p.Name;
+                images.Add(name, image);
+                imageList1.Images.Add(name, image);
+                processed += 1;
+                worker.ReportProgress(processed);
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged (object sender, ProgressChangedEventArgs e)
+        {
+            verticalProgressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted (object sender, RunWorkerCompletedEventArgs e)
+        {
+            foreach (var p in imagePath)
+            {
+                string name = p.Name;
+                var item = listView1.Items.Add(name, name);
+            }
+            verticalProgressBar1.Value = 0;
         }
     }
 }
