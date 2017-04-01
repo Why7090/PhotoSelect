@@ -16,7 +16,7 @@ namespace PhotoSelect
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImageSelect());
+            Application.Run(new PhotoSelect());
         }
     }
 }

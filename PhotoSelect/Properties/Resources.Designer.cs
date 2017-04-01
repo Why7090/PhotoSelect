@@ -91,6 +91,54 @@ namespace PhotoSelect.Properties {
         }
         
         /// <summary>
+        ///   查找类似 &quot;/&quot; : 
+        ///  Bookmark selected image
+        ///
+        ///&quot;↑&quot; / &quot;←&quot; : 
+        ///  Select previous image
+        ///
+        ///&quot;↓&quot; / &quot;→&quot; : 
+        ///  Select next image 的本地化字符串。
+        /// </summary>
+        internal static string Shortcuts {
+            get {
+                return ResourceManager.GetString("Shortcuts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &quot;/&quot; : 
+        ///  Marquer l&apos;image sélectionnée
+        ///
+        ///&quot;↑&quot; / &quot;←&quot; : 
+        ///  Sélectionner l&apos;image précédente
+        ///
+        ///&quot;↓&quot; / &quot;→&quot; : 
+        ///  Sélectionner l&apos;image suivante 的本地化字符串。
+        /// </summary>
+        internal static string Shortcuts_fr {
+            get {
+                return ResourceManager.GetString("Shortcuts_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &quot;/&quot; : 
+        ///  为选择的图片添加书签
+        ///
+        ///&quot;↑&quot; / &quot;←&quot; : 
+        ///  选择上一个图片
+        ///
+        ///&quot;↓&quot; / &quot;→&quot; : 
+        ///  选择下一个图片 的本地化字符串。
+        /// </summary>
+        internal static string Shortcuts_zh {
+            get {
+                return ResourceManager.GetString("Shortcuts_zh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap Star_32px {

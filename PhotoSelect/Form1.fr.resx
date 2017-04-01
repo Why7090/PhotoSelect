@@ -117,50 +117,99 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 21</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fichier</value>
+  </data>
+  <data name="browseFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="browseFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ouvrir un dossier</value>
+  </data>
+  <data name="saveBookmarksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="saveBookmarksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 21</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="viewShortcutsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="viewShortcutsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir des raccourcis</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Delete_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="progressBar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="Open_Folder_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Open Folder_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="Save_32px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_32px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="Shortcuts" xml:space="preserve">
-    <value>"/" : 
-  Bookmark selected image
-
-"↑" / "←" : 
-  Select previous image
-
-"↓" / "→" : 
-  Select next image</value>
+  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="Shortcuts_fr" xml:space="preserve">
-    <value>"/" : 
-  Marquer l'image sélectionnée
-
-"↑" / "←" : 
-  Sélectionner l'image précédente
-
-"↓" / "→" : 
-  Sélectionner l'image suivante</value>
+  <data name="button4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="Shortcuts_zh" xml:space="preserve">
-    <value>"/" : 
-  为选择的图片添加书签
-
-"↑" / "←" : 
-  选择上一个图片
-
-"↓" / "→" : 
-  选择下一个图片</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEACADECAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAgEDABwIHQA2AiYAOQAmABsHEgAOFAsAEicRABEnEwAJGxMAAQMDAAIBAwAcCB0ANwEmACoE
+        HAAMCwgAHQ45ABwPOAAPDycAAgMFAMAxvwDXILgA9watAE6vUgBEsmoAPbN6ANcftwD9AasAT69NAESy
+        agD6BKwATrBQAH5D/wAHwf8AbVb/AIBB/wAHwf8AB8H/AGFj/wBtVf8AB8H/AAfB/wAIwP8A/wCqAHoh
+        UgBAXDMAUK9MAL0RfgBkJ0MAODImAIFA/wBQN24ALVJWABeRtwAoYm4AB8H/AP///wAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAATJicgMjIyMjIyMjIzNjc3Nzc3Nzc3KCkqAAAAAAAAABIiIzIyMjIyMjIy
+        MjM2Nzc3Nzc3Nzc3JCUAAAAAAAAAESAyMjIyMjIyMjIyMzY3Nzc3Nzc3Nzc3IQAAAAAAAAAQMjIyMjIy
+        MjIyMjIzNjc3Nzc3Nzc3Nzc3AAAAAAAAABAyMjIyMjIyMjIyMjM2Nzc3Nzc3Nzc3NzcAAAAAAAAAEDIy
+        MjIyMjIyMjIyMzY3Nzc3Nzc3Nzc3NwAAAAAAAAAQMjIyMjIyMjIyMjIzNjc3Nzc3Nzc3Nzc3AAAAAAAA
+        ABAyMjIyMjIyMjIyMjM2Nzc3Nzc3Nzc3NzcAAAAAAAAAEDIyMjIyMjIyMjIyMzQ1NTU1NTU1NTU1NQAA
+        AAAAAAAQMjIyMjIyMjIyMjIzMTExMTExMTExMTExAAAAAAAAABAyMjIyMjIyMjIyMjMtLi4uLi4uLi4u
+        Li4AAAAAAAAAEDIyMjIyMjIyMjIyMy0uLi4uLi4uLi4uLgAAAAAAAAAQMjIyMjIyMjIyMjIzLS4uLi4u
+        Li4uLi4uAAAAAAAAABAyMjIyMjIyMjIyMjMtLi4uLi4uLi4uLi4AAAAAAAAADzExMTExMTExMTExMS0u
+        Li4uLi4uLi4uLgAAAAAAAAAOLy8vLy8vLy8vLy8wLS4uLi4uLi4uLi4uAAAAAAAAAAQrKysrKysrKysr
+        KywtLi4uLi4uLi4uLi4AAAAAAAAABCsrKysrKysrKysrLC0uLi4uLi4uLi4uLgAAAAAAAAAEKysrKysr
+        KysrKyssLS4uLi4uLi4uLi4uAAAAAAAAAAQrKysrKysrKysrKywtLi4uLi4uLi4uLi4AAAAAAAAABCsr
+        KysrKysrKysrLC0uLi4uLi4uLi4uLgAAAAAAAAANHisrKysrKysrKyssLS4uLi4uLi4uLi4fAAAAAAAA
+        AAwaGysrKysrKysrKywtLi4uLi4uLi4uHB0AAAAAAAAACxQVFisrKysrKysrLC0uLi4uLi4uLhcYGQAA
+        AAAAAAAAAQIDBAQEBAQEBAQFBgcHBwcHBwcHCAkKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</value>
   </data>
-  <data name="Star_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Star_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="Star_Filled_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Star Filled_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Triage des photos</value>
   </data>
 </root>

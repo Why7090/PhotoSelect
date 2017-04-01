@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Cyotek.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
+using PhotoSelect.Properties;
 
 namespace PhotoSelect
 {
-    public partial class ImageSelect : Form
+    public partial class PhotoSelect : Form
     {
         public FileInfo[] imagePath;
         public Dictionary<string, Image> images = new Dictionary<string, Image>();
         public List<int> bookmarks = new List<int>();
 
-        public ImageSelect ()
+        public PhotoSelect ()
         {
             InitializeComponent();
         }
@@ -38,7 +40,8 @@ namespace PhotoSelect
                 imageList1.Images.RemoveAt(0);
                 img.Dispose();
             }
-            verticalProgressBar1.Maximum = imagePath.Length;
+            progressBar1.Visible = true;
+            progressBar1.Maximum = imagePath.Length;
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -58,11 +61,11 @@ namespace PhotoSelect
             imageBox1.SizeMode = ImageBoxSizeMode.Normal;
             if (bookmarks.Contains(listView1.SelectedIndices[0]))
             {
-                button1.Image = Properties.Resources.Star_Filled_32px;
+                button1.Image = Resources.Star_Filled_32px;
             }
             else
             {
-                button1.Image = Properties.Resources.Star_32px;
+                button1.Image = Resources.Star_32px;
             }
         }
 
@@ -77,13 +80,13 @@ namespace PhotoSelect
                 {
                     bookmarks.Remove(index);
                     item.BackColor = Color.Transparent;
-                    button1.Image = Properties.Resources.Star_32px;
+                    button1.Image = Resources.Star_32px;
                 }
                 else
                 {
                     bookmarks.Add(index);
                     item.BackColor = Color.Yellow;
-                    button1.Image = Properties.Resources.Star_Filled_32px;
+                    button1.Image = Resources.Star_Filled_32px;
                 }
             }
         }
@@ -141,11 +144,14 @@ namespace PhotoSelect
 
         private void ShowHelp (object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "\"/\" : \n  Bookmark selected image\n\n" +
-                "Arrow left / up : \n  Select previous image\n\n" +
-                "Arrow right / down : \n  Select next image", "Shortcuts",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower();
+            string key = "Shortcuts";
+            if (lang == "zh" || lang == "fr")
+            {
+                key += "_" + lang;
+            }
+            string msg = Resources.ResourceManager.GetString(key);
+            MessageBox.Show(msg, "Shortcuts", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void DeleteImage (object sender, EventArgs e)
@@ -179,10 +185,9 @@ namespace PhotoSelect
             }
         }
 
-        private void backgroundWorker1_DoWork (object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void backgroundWorker1_DoWork (object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            //int length = imagePath.Length;
             int processed = 0;
 
             foreach (var p in imagePath)
@@ -198,7 +203,7 @@ namespace PhotoSelect
 
         private void backgroundWorker1_ProgressChanged (object sender, ProgressChangedEventArgs e)
         {
-            verticalProgressBar1.Value = e.ProgressPercentage;
+            progressBar1.Value = e.ProgressPercentage;
         }
 
         private void backgroundWorker1_RunWorkerCompleted (object sender, RunWorkerCompletedEventArgs e)
@@ -208,7 +213,8 @@ namespace PhotoSelect
                 string name = p.Name;
                 var item = listView1.Items.Add(name, name);
             }
-            verticalProgressBar1.Value = 0;
+            progressBar1.Value = 0;
+            progressBar1.Visible = false;
         }
     }
 }
