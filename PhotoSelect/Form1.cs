@@ -103,7 +103,7 @@ namespace PhotoSelect
                 var file = imagePath[index];
                 file.CopyTo(Path.Combine(path, file.Name), false);
             }
-            MessageBox.Show(GetLocalizedString("Saved") + path);
+            MessageBox.Show(Strings.Saved + path);
         }
 
         private bool SelectImage (int relativeIndex)
@@ -144,8 +144,8 @@ namespace PhotoSelect
 
         private void ShowHelp (object sender, EventArgs e)
         {
-            string content = GetLocalizedString("Shortcuts");
-            string title = GetLocalizedString("ShortcutsTitle");
+            string content = Strings.Shortcuts;
+            string title = Strings.ShortcutsTitle;
             MessageBox.Show(content, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -154,8 +154,8 @@ namespace PhotoSelect
             if (listView1.SelectedItems.Count > 0)
             {
                 var item = listView1.SelectedItems[0];
-                string content = GetLocalizedString("Delete");
-                string title = GetLocalizedString("Warning");
+                string content = Strings.Delete;
+                string title = Strings.Warning;
                 if (MessageBox.Show(String.Format(content, item.Text), title,
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
@@ -212,23 +212,6 @@ namespace PhotoSelect
             }
             progressBar1.Value = 0;
             progressBar1.Visible = false;
-        }
-
-        private string GetLocalizedString (string key)
-        {
-            string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower();
-            if (lang == "zh" || lang == "fr")
-            {
-                key += "_" + lang;
-            }
-            try
-            {
-                return Resources.ResourceManager.GetString(key);
-            }
-            catch
-            {
-                return "";
-            }
         }
     }
 }

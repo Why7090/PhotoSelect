@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PhotoSelect.Properties {
+namespace PhotoSelect {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace PhotoSelect.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace PhotoSelect.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PhotoSelect.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PhotoSelect.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,52 +61,54 @@ namespace PhotoSelect.Properties {
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        ///   查找类似 Move {0} to recycle bin? 的本地化字符串。
         /// </summary>
-        internal static System.Drawing.Bitmap Delete_32px {
+        internal static string Delete {
             get {
-                object obj = ResourceManager.GetObject("Delete_32px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        ///   查找类似 Images saved to 的本地化字符串。
         /// </summary>
-        internal static System.Drawing.Bitmap Open_Folder_32px {
+        internal static string Saved {
             get {
-                object obj = ResourceManager.GetObject("Open_Folder_32px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Saved", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        ///   查找类似 &quot;/&quot; : 
+        ///  Bookmark selected image
+        ///
+        ///&quot;↑&quot; / &quot;←&quot; : 
+        ///  Select previous image
+        ///
+        ///&quot;↓&quot; / &quot;→&quot; : 
+        ///  Select next image 的本地化字符串。
         /// </summary>
-        internal static System.Drawing.Bitmap Save_32px_1 {
+        internal static string Shortcuts {
             get {
-                object obj = ResourceManager.GetObject("Save_32px_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Shortcuts", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        ///   查找类似 Shortcuts 的本地化字符串。
         /// </summary>
-        internal static System.Drawing.Bitmap Star_32px {
+        internal static string ShortcutsTitle {
             get {
-                object obj = ResourceManager.GetObject("Star_32px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("ShortcutsTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        ///   查找类似 Warning 的本地化字符串。
         /// </summary>
-        internal static System.Drawing.Bitmap Star_Filled_32px {
+        internal static string Warning {
             get {
-                object obj = ResourceManager.GetObject("Star_Filled_32px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
     }

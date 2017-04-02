@@ -117,20 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Delete_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Mettre {0} dans la corbeille?</value>
   </data>
-  <data name="Open_Folder_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Open Folder_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Saved" xml:space="preserve">
+    <value>Images sauvegardés dans </value>
   </data>
-  <data name="Save_32px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_32px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Shortcuts" xml:space="preserve">
+    <value>"/" : 
+  Bookmark selected image
+
+"↑" / "←" : 
+  Select previous image
+
+"↓" / "→" : 
+  Select next image</value>
   </data>
-  <data name="Star_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Star_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ShortcutsTitle" xml:space="preserve">
+    <value>Raccourcis</value>
   </data>
-  <data name="Star_Filled_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Star Filled_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Warning" xml:space="preserve">
+    <value>Avertissement</value>
   </data>
 </root>
