@@ -103,7 +103,7 @@ namespace PhotoSelect
                 var file = imagePath[index];
                 file.CopyTo(Path.Combine(path, file.Name), false);
             }
-            MessageBox.Show("Images saved to " + path);
+            MessageBox.Show(GetLocalizedString("Saved") + path);
         }
 
         private bool SelectImage (int relativeIndex)
@@ -144,14 +144,9 @@ namespace PhotoSelect
 
         private void ShowHelp (object sender, EventArgs e)
         {
-            string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower();
-            string key = "Shortcuts";
-            if (lang == "zh" || lang == "fr")
-            {
-                key += "_" + lang;
-            }
-            string msg = Resources.ResourceManager.GetString(key);
-            MessageBox.Show(msg, "Shortcuts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string content = GetLocalizedString("Shortcuts");
+            string title = GetLocalizedString("ShortcutsTitle");
+            MessageBox.Show(content, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void DeleteImage (object sender, EventArgs e)
@@ -159,7 +154,9 @@ namespace PhotoSelect
             if (listView1.SelectedItems.Count > 0)
             {
                 var item = listView1.SelectedItems[0];
-                if (MessageBox.Show("Move \"" + item.Text + "\" to recycle bin?", "Warning",
+                string content = GetLocalizedString("Delete");
+                string title = GetLocalizedString("Warning");
+                if (MessageBox.Show(String.Format(content, item.Text), title,
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     string key = item.ImageKey;
@@ -215,6 +212,23 @@ namespace PhotoSelect
             }
             progressBar1.Value = 0;
             progressBar1.Visible = false;
+        }
+
+        private string GetLocalizedString (string key)
+        {
+            string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower();
+            if (lang == "zh" || lang == "fr")
+            {
+                key += "_" + lang;
+            }
+            try
+            {
+                return Resources.ResourceManager.GetString(key);
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 }

@@ -61,12 +61,39 @@ namespace PhotoSelect.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Move {0} to recycle bin? 的本地化字符串。
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap Delete_32px {
             get {
                 object obj = ResourceManager.GetObject("Delete_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Mettre {0} dans la corbeille? 的本地化字符串。
+        /// </summary>
+        internal static string Delete_fr {
+            get {
+                return ResourceManager.GetString("Delete_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 是否将 {0} 移动到回收站？ 的本地化字符串。
+        /// </summary>
+        internal static string Delete_zh {
+            get {
+                return ResourceManager.GetString("Delete_zh", resourceCulture);
             }
         }
         
@@ -87,6 +114,33 @@ namespace PhotoSelect.Properties {
             get {
                 object obj = ResourceManager.GetObject("Save_32px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Images saved to 的本地化字符串。
+        /// </summary>
+        internal static string Saved {
+            get {
+                return ResourceManager.GetString("Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Images sauvegardés dans  的本地化字符串。
+        /// </summary>
+        internal static string Saved_fr {
+            get {
+                return ResourceManager.GetString("Saved_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 图片已保存到  的本地化字符串。
+        /// </summary>
+        internal static string Saved_zh {
+            get {
+                return ResourceManager.GetString("Saved_zh", resourceCulture);
             }
         }
         
@@ -139,6 +193,33 @@ namespace PhotoSelect.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Shortcuts 的本地化字符串。
+        /// </summary>
+        internal static string ShortcutsTitle {
+            get {
+                return ResourceManager.GetString("ShortcutsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Raccourcis 的本地化字符串。
+        /// </summary>
+        internal static string ShortcutsTitle_fr {
+            get {
+                return ResourceManager.GetString("ShortcutsTitle_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 快捷键 的本地化字符串。
+        /// </summary>
+        internal static string ShortcutsTitle_zh {
+            get {
+                return ResourceManager.GetString("ShortcutsTitle_zh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap Star_32px {
@@ -155,6 +236,33 @@ namespace PhotoSelect.Properties {
             get {
                 object obj = ResourceManager.GetObject("Star_Filled_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Warning 的本地化字符串。
+        /// </summary>
+        internal static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Avertissement 的本地化字符串。
+        /// </summary>
+        internal static string Warning_fr {
+            get {
+                return ResourceManager.GetString("Warning_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 警告 的本地化字符串。
+        /// </summary>
+        internal static string Warning_zh {
+            get {
+                return ResourceManager.GetString("Warning_zh", resourceCulture);
             }
         }
     }
