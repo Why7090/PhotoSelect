@@ -76,16 +76,22 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>732D603BE86E72629EFF204E3E70302920C80F7C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6E32DF6417453D1AFB63145DF065EA5C2C273B92</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>PhotoSelect_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Why7090.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Why7090.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cyotek.Windows.Forms.ImageBox">
@@ -161,6 +167,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Why7090.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
