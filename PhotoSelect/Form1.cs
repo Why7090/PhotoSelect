@@ -114,8 +114,10 @@ namespace PhotoSelect
                 if (index < listView1.Items.Count && index >= 0)
                 {
                     listView1.Focus();
-                    listView1.Items[index].Selected = true;
-                    listView1.Items[index].Focused = true;
+                    var item = listView1.Items[index];
+                    item.Selected = true;
+                    item.Focused = true;
+                    item.EnsureVisible();
                     OnImageSelected(null, null);
                     return true;
                 }
@@ -161,6 +163,7 @@ namespace PhotoSelect
                 {
                     string key = item.ImageKey;
                     int index = listView1.SelectedIndices[0];
+                    SelectImage(1);
                     imageList1.Images[key].Dispose();
                     imageList1.Images.RemoveByKey(key);
                     images[key].Dispose();
