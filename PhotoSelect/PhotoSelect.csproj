@@ -119,6 +119,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.fr.resx</DependentUpon>
+    </Compile>
     <Compile Include="Strings.zh.Designer.cs">
       <DependentUpon>Strings.zh.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -148,7 +153,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Strings.fr.resx" />
+    <EmbeddedResource Include="Strings.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.zh.Designer.cs</LastGenOutput>

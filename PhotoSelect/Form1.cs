@@ -48,7 +48,7 @@ namespace PhotoSelect
         private FileInfo[] SearchImage (string path)
         {
             DirectoryInfo folder = new DirectoryInfo(path);
-            var filter = new string[] { ".jpg", ".jpeg", ".png", ".gif", ".tiff", ".bmp", ".ico" };
+            var filter = new string[] { ".jpg", ".jpeg", ".png", ".gif", ".tiff", ".bmp", ".ico", ".tif", ".emf", ".cur", ".wmf" };
             var files = folder.GetFiles("*.*", System.IO.SearchOption.TopDirectoryOnly)
                 .Where(f => filter.Contains(f.Extension.ToLower())).ToArray();
             return files;
