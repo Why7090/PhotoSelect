@@ -39,6 +39,7 @@ namespace PhotoSelect
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveBookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.browseBookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewShortcutsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageBox1 = new Cyotek.Windows.Forms.ImageBox();
@@ -61,13 +62,12 @@ namespace PhotoSelect
             // 
             // folderBrowserDialog1
             // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
             // listView1
             // 
-            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.LargeImageList = this.imageList1;
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -77,43 +77,50 @@ namespace PhotoSelect
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.browseFolderToolStripMenuItem,
-            this.saveBookmarksToolStripMenuItem});
+            this.saveBookmarksToolStripMenuItem,
+            this.browseBookmarksToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // browseFolderToolStripMenuItem
             // 
-            resources.ApplyResources(this.browseFolderToolStripMenuItem, "browseFolderToolStripMenuItem");
             this.browseFolderToolStripMenuItem.Name = "browseFolderToolStripMenuItem";
+            resources.ApplyResources(this.browseFolderToolStripMenuItem, "browseFolderToolStripMenuItem");
             this.browseFolderToolStripMenuItem.Click += new System.EventHandler(this.BrowseFolder);
             // 
             // saveBookmarksToolStripMenuItem
             // 
-            resources.ApplyResources(this.saveBookmarksToolStripMenuItem, "saveBookmarksToolStripMenuItem");
             this.saveBookmarksToolStripMenuItem.Name = "saveBookmarksToolStripMenuItem";
+            resources.ApplyResources(this.saveBookmarksToolStripMenuItem, "saveBookmarksToolStripMenuItem");
             this.saveBookmarksToolStripMenuItem.Click += new System.EventHandler(this.Save);
+            // 
+            // browseBookmarksToolStripMenuItem
+            // 
+            this.browseBookmarksToolStripMenuItem.Name = "browseBookmarksToolStripMenuItem";
+            resources.ApplyResources(this.browseBookmarksToolStripMenuItem, "browseBookmarksToolStripMenuItem");
+            this.browseBookmarksToolStripMenuItem.Click += new System.EventHandler(this.BrowseBookmarks);
             // 
             // helpToolStripMenuItem
             // 
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewShortcutsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // viewShortcutsToolStripMenuItem
             // 
-            resources.ApplyResources(this.viewShortcutsToolStripMenuItem, "viewShortcutsToolStripMenuItem");
             this.viewShortcutsToolStripMenuItem.Name = "viewShortcutsToolStripMenuItem";
+            resources.ApplyResources(this.viewShortcutsToolStripMenuItem, "viewShortcutsToolStripMenuItem");
             this.viewShortcutsToolStripMenuItem.Click += new System.EventHandler(this.ShowHelp);
             // 
             // imageBox1
@@ -123,11 +130,11 @@ namespace PhotoSelect
             // 
             // flowLayoutPanel1
             // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // button1
@@ -226,5 +233,6 @@ namespace PhotoSelect
         private System.Windows.Forms.Button button4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ProgressBar progressBar1;
+        private ToolStripMenuItem browseBookmarksToolStripMenuItem;
     }
 }

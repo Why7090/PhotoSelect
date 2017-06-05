@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,6 +17,7 @@ namespace PhotoSelect
         public FileInfo[] imagePath;
         public Dictionary<string, Image> images = new Dictionary<string, Image>();
         public List<int> bookmarks = new List<int>();
+        public List<FileInfo> bookmarksPath = new List<FileInfo>();
 
         public PhotoSelect ()
         {
@@ -30,7 +30,43 @@ namespace PhotoSelect
             {
                 return;
             }
+            foreach (int index in bookmarks)
+            {
+                var file = imagePath[index];
+                if (!bookmarksPath.Contains(file))
+                {
+                    bookmarksPath.Add(file);
+                }
+            }
             imagePath = SearchImage(folderBrowserDialog1.SelectedPath);
+            images.Clear();
+            bookmarks.Clear();
+            listView1.Items.Clear();
+            int length = imageList1.Images.Count;
+            for (int i = 0; i < length; i++)
+            {
+                var img = imageList1.Images[0];
+                imageList1.Images.RemoveAt(0);
+                img.Dispose();
+            }
+            progressBar1.Visible = true;
+            progressBar1.Maximum = imagePath.Length;
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void BrowseBookmarks(object sender, EventArgs e)
+        {
+            foreach (int index in bookmarks)
+            {
+                bookmarksPath.Add(imagePath[index]);
+            }
+            imagePath = bookmarksPath.ToArray();
+            bookmarksPath.Clear();
+            bookmarks.Clear();
+            for (int i = 0; i < imagePath.Length; i++)
+            {
+                bookmarks.Add(i);
+            }
             images.Clear();
             listView1.Items.Clear();
             int length = imageList1.Images.Count;
@@ -93,15 +129,32 @@ namespace PhotoSelect
 
         private void Save (object sender, EventArgs e)
         {
+            foreach (int index in bookmarks)
+            {
+                var file = imagePath[index];
+                if (!bookmarksPath.Contains(file))
+                {
+                    bookmarksPath.Add(file);
+                }
+            }
             if (folderBrowserDialog1.ShowDialog() != DialogResult.OK)
             {
                 return;
             }
             var path = folderBrowserDialog1.SelectedPath;
-            foreach (int index in bookmarks)
+            var pending = bookmarksPath.ToList();
+            try
             {
-                var file = imagePath[index];
-                file.CopyTo(Path.Combine(path, file.Name), false);
+                foreach (var file in pending)
+                {
+                    file.CopyTo(Path.Combine(path, file.Name), false);
+                    bookmarksPath.Remove(file);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Operation failed :\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             MessageBox.Show(Strings.Saved + path);
         }
@@ -174,9 +227,9 @@ namespace PhotoSelect
                         FileSystem.DeleteFile(imagePath[index].FullName,
                             UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Operation failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Operation failed :\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     var lst = imagePath.ToList();
                     lst.RemoveAt(index);
@@ -206,12 +259,21 @@ namespace PhotoSelect
             progressBar1.Value = e.ProgressPercentage;
         }
 
-        private void backgroundWorker1_RunWorkerCompleted (object sender, RunWorkerCompletedEventArgs e)
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             foreach (var p in imagePath)
             {
                 string name = p.Name;
                 var item = listView1.Items.Add(name, name);
+                if (bookmarksPath.Contains(p))
+                {
+                    bookmarks.Add(item.Index);
+                    item.BackColor = Color.Yellow;
+                }
+                else if (bookmarks.Contains(item.Index))
+                {
+                    item.BackColor = Color.Yellow;
+                }
             }
             progressBar1.Value = 0;
             progressBar1.Visible = false;
