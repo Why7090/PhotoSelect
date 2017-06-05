@@ -87,6 +87,7 @@ namespace PhotoSelect
             var filter = new string[] { ".jpg", ".jpeg", ".png", ".gif", ".tiff", ".bmp", ".ico", ".tif", ".emf", ".cur", ".wmf" };
             var files = folder.GetFiles("*.*", System.IO.SearchOption.TopDirectoryOnly)
                 .Where(f => filter.Contains(f.Extension.ToLower())).ToArray();
+            files = files.OrderByDescending(f => f.LastWriteTime).ToArray();
             return files;
         }
 
