@@ -17,7 +17,7 @@ namespace PhotoSelect
         public FileInfo[] imagePath;
         public Dictionary<string, Image> images = new Dictionary<string, Image>();
         public List<int> bookmarks = new List<int>();
-        public List<FileInfo> bookmarksPath = new List<FileInfo>();
+        public List<FileInfo> bookmarkFiles = new List<FileInfo>();
 
         public PhotoSelect ()
         {
@@ -33,9 +33,9 @@ namespace PhotoSelect
             foreach (int index in bookmarks)
             {
                 var file = imagePath[index];
-                if (!bookmarksPath.Contains(file))
+                if (!bookmarkFiles.Contains(file))
                 {
-                    bookmarksPath.Add(file);
+                    bookmarkFiles.Add(file);
                 }
             }
             imagePath = SearchImage(folderBrowserDialog1.SelectedPath);
@@ -58,10 +58,10 @@ namespace PhotoSelect
         {
             foreach (int index in bookmarks)
             {
-                bookmarksPath.Add(imagePath[index]);
+                bookmarkFiles.Add(imagePath[index]);
             }
-            imagePath = bookmarksPath.ToArray();
-            bookmarksPath.Clear();
+            imagePath = bookmarkFiles.ToArray();
+            bookmarkFiles.Clear();
             bookmarks.Clear();
             for (int i = 0; i < imagePath.Length; i++)
             {
@@ -133,9 +133,9 @@ namespace PhotoSelect
             foreach (int index in bookmarks)
             {
                 var file = imagePath[index];
-                if (!bookmarksPath.Contains(file))
+                if (!bookmarkFiles.Contains(file))
                 {
-                    bookmarksPath.Add(file);
+                    bookmarkFiles.Add(file);
                 }
             }
             if (folderBrowserDialog1.ShowDialog() != DialogResult.OK)
@@ -143,13 +143,13 @@ namespace PhotoSelect
                 return;
             }
             var path = folderBrowserDialog1.SelectedPath;
-            var pending = bookmarksPath.ToList();
+            var pending = bookmarkFiles.ToList();
             try
             {
                 foreach (var file in pending)
                 {
                     file.CopyTo(Path.Combine(path, file.Name), false);
-                    bookmarksPath.Remove(file);
+                    bookmarkFiles.Remove(file);
                 }
             }
             catch (Exception ex)
@@ -262,11 +262,16 @@ namespace PhotoSelect
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            var bookmarkPath = new List<string>(bookmarkFiles.Count);
+            foreach (var file in bookmarkFiles)
+            {
+                bookmarkPath.Add(file.FullName);
+            }
             foreach (var p in imagePath)
             {
                 string name = p.Name;
                 var item = listView1.Items.Add(name, name);
-                if (bookmarksPath.Contains(p))
+                if (bookmarkPath.Contains(p.FullName))
                 {
                     bookmarks.Add(item.Index);
                     item.BackColor = Color.Yellow;
